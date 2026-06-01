@@ -162,9 +162,8 @@ static int edu_probe(struct pci_dev *pdev,
             edu->regs, pdev->irq);
 
     edu_test_factorial(edu);
-	for(int i = 0 ; i < 2 ; i++){ 
-    	edu_test_dma(edu);
-	}
+    edu_test_dma(edu);
+
 
     return 0;
 
