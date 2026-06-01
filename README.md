@@ -151,6 +151,25 @@ edu_driver/
 
 ---
 
+## Output
+[ 83451.921793] edu: probe called
+[ 83451.932426] edu: probe complete. BAR0=00000000f7c577e7 IRQ=27
+[ 83451.932428] edu: factorial(5) = 120 (expected 120)
+[ 83451.932430] edu: dma_addr=0x5a99000 size=4096
+[ 83452.032054] edu: IRQ fired! status=0x100
+[ 83452.032504] edu: DMA complete!
+
+### lspci
+00:03.0 Unclassified device [00ff]: Device 1234:11e8 (rev 10)
+Flags: bus master, fast devsel, latency 0, IRQ 27
+Memory at fea00000 (32-bit, non-prefetchable) [size=1M]
+Capabilities: [40] MSI: Enable+ Count=1/1 Maskable- 64bit+
+Kernel driver in use: edu_driver
+
+### /proc/interrupts
+27:  1  0  PCI-MSI-0000:00:03.0  0-edge  edu_driver
+
+
 ## Topics demonstrated
 
 - PCI device enumeration and probe()/remove() lifecycle
